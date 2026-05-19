@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 import providersData from "../../../data/providers.json";
 
-const API_KEY = "AIzaSyAhUfrRpNJeZbMJRLiwJ_XIK42DYZ0BDAw";
+const API_KEY = process.env.GEMINI_API_KEY || "";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 function matchProviders(service: string, location: string) {
